@@ -1,0 +1,38 @@
+Only in host-mtd-1.5.2/: .applied_patches_list
+Only in host-mtd-1.5.2/: .stamp_downloaded
+Only in host-mtd-1.5.2/: .stamp_extracted
+Only in host-mtd-1.5.2/: .stamp_patched
+diff '--color=auto' -ur host-mtd-1.5.2/include/common.h host-mtd-1.5.2.new/include/common.h
+--- host-mtd-1.5.2/include/common.h	2015-07-25 01:18:53.000000000 +0000
++++ host-mtd-1.5.2.new/include/common.h	2021-08-11 13:56:08.314515694 +0000
+@@ -30,6 +30,8 @@
+ #include <inttypes.h>
+ #include "version.h"
+ 
++#include <sys/sysmacros.h>
++
+ #ifndef PROGRAM_NAME
+ # error "You must define PROGRAM_NAME before including this header"
+ #endif
+diff '--color=auto' -ur host-mtd-1.5.2/lib/libmtd.c host-mtd-1.5.2.new/lib/libmtd.c
+--- host-mtd-1.5.2/lib/libmtd.c	2015-07-25 01:18:53.000000000 +0000
++++ host-mtd-1.5.2.new/lib/libmtd.c	2021-08-11 13:58:50.733387625 +0000
+@@ -31,6 +31,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
++#include <sys/sysmacros.h>
+ #include <inttypes.h>
+ 
+ #include <mtd/mtd-user.h>
+diff '--color=auto' -ur host-mtd-1.5.2/lib/libmtd_legacy.c host-mtd-1.5.2.new/lib/libmtd_legacy.c
+--- host-mtd-1.5.2/lib/libmtd_legacy.c	2015-07-25 01:18:53.000000000 +0000
++++ host-mtd-1.5.2.new/lib/libmtd_legacy.c	2021-08-11 13:58:20.845596224 +0000
+@@ -31,6 +31,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
++#include <sys/sysmacros.h>
+ #include <mtd/mtd-user.h>
+ 
+ #include <libmtd.h>
